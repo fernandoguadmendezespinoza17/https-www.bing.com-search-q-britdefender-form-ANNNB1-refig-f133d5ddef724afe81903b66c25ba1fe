@@ -1,0 +1,408 @@
+
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language="JavaScript"> 
+var get_curr_language = 2;
+var curr_lang_idx = 2;
+	 
+var wan_mode=0;
+var wlan0_wps_cfg=0;
+var wlan0_pwdkey_cfg=0;
+var wlan1_wps_cfg=0;
+var wlan1_pwdkey_cfg=0;
+var my_auto_detect_fxo=0;
+var my_isolate_wlan=1;
+var adsl_para_page=0;
+var my_ddns=1;
+var my_wlan_mac=0;
+var my_snmp=0;
+var my_dialup=0;
+var my_printer=0;
+var my_bridge=0;
+var my_8021x=0;
+var my_tiny=0;
+var my_vpn=0;
+var my_upnp=0;
+var my_usb=1;
+var my_usb_storage=1;
+var my_usb_printer=1;
+var operation_func=8;
+var my_wps=1;
+var my_wcn=0;
+var product_code=1021610;
+var my_file_share=1;
+var my_umts=1;
+var umtsCnt=0;
+var my_umts_upg=0;
+var vlan_func_enable=0;
+var my_qos=2;
+var my_isdn=0;
+var my_voip=0;
+var FXS_Num=0;
+var my_voip_h323=0;
+var my_voip_sip=0;
+var ipsec_func=0;
+var pptp_func=0;
+var iptv_func=0;
+var static_rt_func=0;
+var my_upnpIgd=0;
+var my_upnpAv=1;
+var PM="VRV7006B";
+var BACKUP_LOG_NAME="dsl_log.log";
+var BACKUP_CONFIG_NAME="backup_config.bin";
+var dhcpd_fixip_func=1;
+var vendor_code=26;
+var my_http_redir=0;
+var arcor_umtsPin=0;
+var my_ncidd=0;
+var hyper_link="<a href='http://www.telmex.com' target='_blank'>";
+var urlname="www.telmex.com";
+var vendor_name="Telmex";
+var company="Telmex, Inc.";
+var mouseover="'#ced6c6'";
+var mouseout="'#D9D9D9'";
+var wizardbg="'#ced6c6'";
+var vendor_no=2;
+var menu_link="<td height='0' align='left' bgColor='#ced6c6' valign='middle'>";
+var helplink="";
+var helplink1="";
+
+
+var STR_login_id = 'Login ID';
+var STR_login_password = 'Password';
+var STR_login_help = 'We suggest that you use Internet Explorer 9.0 or above at a minimum of 1024x768 resolution.<br><br>Important: To secure the correct display in the Internet Explorer you must not disable "Active Scripting".';
+var STR_login_warn = 'Warning:';
+var STR_login_desc = 'The page is not displayed completely since "Active Scripting" is deactivated in the Internet Explorer. Please enable this function in the security settings of the browser in order to view the page correctly.';
+var STR_BTN_LOGINCancel = 'Cancel';
+var STR_BTN_LOGIN = 'Login';
+
+var STR_BTN_LOGIN_falure = 'Login Failures:';
+var STR_BTN_LOGIN_err_pswd = 'You had tried to login ';
+var STR_BTN_LOGIN_times = ' times';
+var STR_BTN_LOGIN_butfailed = ', but failed.';   
+var STR_BTN_LOGIN_user_is = 'The user is:';   
+var STR_BTN_LOGIN_pswd_hint = 'The password hint is:';
+
+
+var STR_login_id_es ='ID de Login';
+var STR_login_password_es ='Contraseña';
+var STR_login_help_es ='Recomendamos usar Internet Explorer 9.0 o superior y una resolución minma de 1024x768<br><br> Importante: para asegurar el despliegue correcto en Internet Explorer debe deshabilitar "Active Scripting"';
+var STR_login_warn_es ='Advertencia:';
+var STR_login_desc_es ='Esta pagina no se muestra completa debido a que "Active Scripting" esta desactivado en Internet Explorer, Por favor active esta función in la configuración de seguridad de su navegador para poder visualizar la pagina correctamente.';
+var STR_BTN_LOGINCancel_es = 'Cancelar';
+var STR_BTN_LOGIN_es = 'Acceso';
+
+var STR_BTN_LOGIN_falure_es = 'Fallas Iniciar sesión:';
+var STR_BTN_LOGIN_err_pswd_es = 'Ha intentado iniciar sesión ';
+var STR_BTN_LOGIN_times_es = ' veces';
+var STR_BTN_LOGIN_butfailed_es = ', pero ha fallado.';   
+var STR_BTN_LOGIN_user_is_es = 'El usuario es:';   
+var STR_BTN_LOGIN_pswd_hint_es = 'La pista para la contraseña es:';
+
+if( get_curr_language !=2 ) {
+var STR_forget_passwd = 'Do you forget your password? Click "OK" to Password Recovery page';
+var STR_dup_login='You cannot Login unless logout another user first.';
+}
+else {
+var STR_forget_passwd = '¿Olvidaste tu contraseña? Haga clic en "Aceptar" en la página Recuperación de contraseñas';
+var STR_dup_login='No se puede iniciar sesión. Para poder hacerlo es necesario que el otro usuario que ha iniciado sesión anteriormente, finalice su sesión.';
+}
+
+function dw(message){ 
+	document.write(message); 
+}
+function dj(message)
+{
+	return message; 
+}
+
+function passwd_recover_page() {
+	location.href="/html/passwd_recovery.shtm";
+}
+
+if (parent.location.href != window.location.href)
+parent.location.href = window.location.href;
+
+function evaltF() {
+	document.tF.submit();
+}
+
+function kDown(e)
+{
+    var key = 0 ;
+    if(window.event)  key = window.event.keyCode;
+    else if(e)        key = e.which ;
+
+    if(key==13) document.tF.submit();
+	
+	
+	
+	
+}
+
+function getQueryValue( _name )
+{
+	var query = location.search;
+
+	if (query == "") {
+		return "";
+	}
+
+	query = query.substr( 1, query.length ) ; 
+	var arr = query.split( /[\&]/ );
+	_name = _name + "=";
+	var index;
+
+	for( var x = 0 ; x < arr.length ; x++ ) {
+		index = arr[x].indexOf(_name);
+
+		if( index != 0 ) {
+			continue ; 
+		}
+
+		return arr[x].substr( _name.length, arr[x].length );
+	}
+
+	return "";
+}
+
+function getIntQueryValue( name, default_val )
+{
+	var r ;
+	var q = getQueryValue( name ) ;
+	if( q=='' )  r = default_val ;
+	else		 r = parseInt(q) ;
+
+	return r ;
+}
+
+function init()
+{
+	var flag = getIntQueryValue("err", 0);
+
+	if (flag != "") {
+		document.getElementById("error_status_field").style.display = "";
+
+		if (flag == -1) {
+			document.getElementById("error_status_field").innerHTML = '<b><font color="red" size="3">' + STR_dup_login + '</font></b>';
+		}
+	}
+}
+document.onkeypress=kDown;
+if (document.layers) window.captureEvents(Event.KEYDOWN);
+
+
+</script>
+<style>
+/*added by Alice for login page*/
+.login-card {
+	font-family: Arial, sans-serif;
+  padding: 40px;
+	width: 400px;
+  background-color: #F7F7F7;
+  margin: 0 auto 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.login-card h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2em;
+}
+.loginInput {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+  height: 25px;
+  font-size: 14px;
+	width: 70%;
+  align: right;
+  margin-bottom: 6px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.loginBtn {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	margin: 0 10px 4px;
+	border-radius: 2px;
+	padding: 6px;  	
+	width: 90px;
+	margin-bottom: 2px;
+	position: relative;
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,0.1); 
+	background-color: #39b8f8;
+}
+.loginBtn:hover {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	margin: 0 10px 4px;
+	border-radius: 2px;
+	padding: 6px;  	
+	width: 90px;
+	margin-bottom: 2px;
+  position: relative;	
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #3ba9ff;
+}
+.login-help {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;  	
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.loginmsg {font-family: Arial;font-size:12px; color:red;}
+body { overflow: hidden;}
+</style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" scroll="no" onload="init()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/p1.gif">
+	<tr>
+		<td height="52" valign="top" width="36%" align="left"><script language="JavaScript">document.write(hyper_link);</script><img src="images/logo.gif" align="top" border="0"> </td>
+		<td align="right"><img src="images/p1.gif"></td>
+	</tr>
+</table>
+
+<form action="/cgi-bin/login.cgi" method="post" name="tF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="60%">
+	<tr>
+			<td valign="middle" align="center" height="420">
+			<div class="login-card">
+			<table border="0" cellspacing="1" cellpadding="5" width=100%>
+				<tr>
+					<td width="91px">
+						<b>
+							<script>
+								if( get_curr_language !=2 )
+									dw(STR_login_id);
+								else
+									dw(STR_login_id_es);
+							</script>
+						</b>
+					</td>
+					<td width="306px"><input type="text" class="loginInput" maxLength=12 size=32 name="user" value="TELMEX" disabled></td>
+				</tr>
+				<tr>
+					<td width="91px">
+						<b>
+							<script>
+								if( get_curr_language !=2 )
+									dw(STR_login_password);
+								else
+									dw(STR_login_password_es);
+							</script>
+						</b>
+					</td>
+					<td width="306px"><INPUT type="password" class="loginInput" maxLength=32 size=32 name="pws"></td>
+				</tr>
+				<tr>
+					<td colspan=2 align="center">
+						<script language="JavaScript">
+							if( get_curr_language !=2 ){
+								document.write('<input type=\"button\" class=\"loginBtn\" value=\"'+dj(STR_BTN_LOGIN)+'\" name=\"login\" onClick=\"evaltF();\">');
+								document.write('<input type=\"button\" class=\"loginBtn\" name=\"cancel\" value=\"'+dj(STR_BTN_LOGINCancel)+'\" onClick=\"javascript:window.location.reload(); return false;\">');
+							}
+							else{
+								document.write('<input type=\"button\" class=\"loginBtn\" value=\"'+dj(STR_BTN_LOGIN_es)+'\" name=\"login\" onClick=\"evaltF();\">');
+								document.write('<input type=\"button\" class=\"loginBtn\" name=\"cancel\" value=\"'+dj(STR_BTN_LOGINCancel_es)+'\" onClick=\"javascript:window.location.reload(); return false;\">');
+							}
+						</script>							
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" align="center" style=" padding-top: 10px;">
+						<span style="display:none;" id="error_status_field"></span>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="login-help">
+				<p class=loginmsgb>
+					<script>
+						if( get_curr_language !=2 )
+							dw(STR_login_help);
+						else
+							dw(STR_login_help_es);
+					</script>
+				</p>
+			</div>
+			</div>
+		
+					<span id=js_enable>
+						<table width="80%" align="center" border="0" bgcolor="#FF0000">
+							<tr>
+						    <td style="color:#FFFFFF">
+						    	<p>
+						    		<b>
+						    			<script>
+												if( get_curr_language !=2 )
+													dw(STR_login_warn);
+												else
+													dw(STR_login_warn_es);						    				
+						    			</script>
+						    		</b>
+						    		<br>
+						    			<script>
+												if( get_curr_language !=2 )
+													dw(STR_login_desc);
+												else
+													dw(STR_login_desc_es);						    				
+						    			</script>	
+									</p>
+								</td>
+							</tr>
+						</table>
+					</span>
+  <script type="text/javascript">
+  <!--
+  document.getElementById("js_enable").innerHTML='';
+  //-->
+  </script>  
+	</td>
+	</tr>
+</table>
+</form>
+
+<table style="margin-bottom:0px; height:14px;" width="100%" border="0" cellspacing="0" cellpadding="0" background="images/p1.gif">
+  <tr>
+		<td align="right"><img src="images/p1.gif"></td>
+  </tr>
+</table>
+
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<frameset rows="76,*,14" frameborder="0" border="0" framespacing="0"> 
+  <frame name="topFrame" scrolling="no" noresize src="setupa_top.stm" >
+  <frame name="main1" src="setupa_brief.stm">
+  <frame name="bottom" src="copyright.stm" scrolling="no" noresize >
+  <noframes>
+  <body>
+  <p>Your browser does not support framesets, please use another browser.</p>
+  </body>
+  </noframes>
+</frameset>
+</html>
+
+</body>
+</html>
